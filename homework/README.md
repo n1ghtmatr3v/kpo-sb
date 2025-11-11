@@ -95,7 +95,3 @@ src/main/java/hse/bank/
 │ └── BankRepositoryProxy.java
 └── Main.java # Точка входа
 
-
-
-## 🗂️ Структура проекта
-Папка для домашки
