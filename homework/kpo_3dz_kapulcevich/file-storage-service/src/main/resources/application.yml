@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: file-storage-service
+  datasource:
+    url: jdbc:h2:mem:storage;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+server:
+  port: 8081
+
+storage:
+  location: /data/storage
+
+logging:
+  level:
+    root: INFO
