@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 8080
+services:
+  storage:
+    url: http://file-storage-service:8081
+  analysis:
+    url: http://file-analysis-service:8082
+logging:
+  level:
+    root: INFO

@@ -1,0 +1,28 @@
+services:
+  file-storage-service:
+    build: ./file-storage-service
+    ports:
+      - "8081:8081"
+    volumes:
+      - file-data:/data/storage
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+  file-analysis-service:
+    build: ./file-analysis-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - file-storage-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+  api-gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - file-storage-service
+      - file-analysis-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+volumes:
+  file-data:

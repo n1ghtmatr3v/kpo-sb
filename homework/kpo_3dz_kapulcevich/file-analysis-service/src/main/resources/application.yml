@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: file-analysis-service
+  datasource:
+    url: jdbc:h2:mem:analysis;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+server:
+  port: 8082
+
+services:
+  storage:
+    url: http://file-storage-service:8081
+
+logging:
+  level:
+    root: INFO
